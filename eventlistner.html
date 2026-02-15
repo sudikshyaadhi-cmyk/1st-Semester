@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Event Validation</title>
+</head>
+<body>
+<form id="myForm">
+    Email: <input type="text" id="email">
+    <input type="submit" value="Submit">
+</form>
+<script>
+document.getElementById("myForm").addEventListener("submit", 
+(event) {
+    var email = document.getElementById("email").value;
+    if (email == "") {
+        alert("Email is required");
+        event.preventDefault(); // Stop form submission
+    }
+});
+</script>
+</body>
+</html>

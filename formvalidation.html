@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form Validation</title>
+</head>
+<body>
+<form onsubmit="return validateForm()">
+    Username: <input type="text" id="username"><br><br>
+    Password: <input type="password" id="password"><br><br>
+    <input type="submit" value="Login">
+</form>
+<script>
+function validateForm() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+    if (user == "") {
+        alert("Username cannot be empty");
+        return false;
+    }
+    if (pass == "") {
+        alert("Password cannot be empty");
+        return false;
+    }
+    if (pass.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+    return true;
+}
+</script>
+</body>
+</html>
